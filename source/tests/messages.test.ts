@@ -135,10 +135,10 @@ describe("Test rule: number", () => {
 		expect(check("")).toEqual([{ type: "number", actual: "", message: "Das Feld '' muss eine Nummer sein." }]);
 
 		check = v.compile({ $$root: true, type: "number", min: 5});
-		expect(check(3)).toEqual([{ type: "numberMin", expected: 5, actual: 3, message: "Das Feld '' muss größer oder gleich 5 sein." }]);
+		expect(check(3)).toEqual([{ type: "numberMin", expected: 5, actual: 3, message: "Das Feld '' muss 5 oder größer sein." }]);
 
 		check = v.compile({ $$root: true, type: "number", max: 5});
-		expect(check(8)).toEqual([{ type: "numberMax", expected: 5, actual: 8, message: "Das Feld '' muss kleiner oder gleich 5 sein." }]);
+		expect(check(8)).toEqual([{ type: "numberMax", expected: 5, actual: 8, message: "Das Feld '' muss 5 oder kleiner sein." }]);
 
 		check = v.compile({ $$root: true, type: "number", equal: 123 });
 		expect(check(8)).toEqual([{ type: "numberEqual", expected: 123, actual: 8, message: "Das Feld '' muss gleich 123 sein." }]);
