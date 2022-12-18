@@ -1,0 +1,28 @@
+{
+  "name": "fastest-validator-l10n-de",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "publishConfig": {
+    "registry": "http://192.168.100.239:4873"
+  },
+  "scripts": {
+    "test": "jest",
+	"build": "rimraf lib && tsc",
+    "upload-package": "npm run test && npm publish",
+    "prepublishOnly": "rimraf lib && tsc"
+  },
+  "author": "Matthias Endres <github@me23.de>",
+  "license": "ISC",
+  "devDependencies": {
+	"fastest-validator": "^1.16.0",
+	"jest": "^29.3.1",
+	"@types/jest": "^29.2.4",
+	"ts-jest": "^29.0.3",
+	"rimraf": "^3.0.2"
+  }
+}
